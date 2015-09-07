@@ -23,6 +23,16 @@ class TeamMemberRepository
     }
 
     /**
+     * @return string
+     */
+    public function getDataGridQuery()
+    {
+        return 'SELECT id, name, description, UNIX_TIMESTAMP(created_on) AS created_on
+                  FROM team_members
+                 WHERE language = :language';
+    }
+
+    /**
      * @param TeamMember $teamMember
      * @return string
      */
