@@ -33,7 +33,7 @@ class Model
                         ON i.meta_id = m.id
                   WHERE i.language = ? AND m.url = ?
                   LIMIT 1',
-                array(Language::getWorkingLanguage(), $url)
+                [ Language::getWorkingLanguage(), $url ]
             );
         } else {
             $urlExists = (bool) $database->getVar(
@@ -43,7 +43,7 @@ class Model
                         ON i.meta_id = m.id
                   WHERE i.language = ? AND m.url = ? AND i.id != ?
                   LIMIT 1',
-                array(Language::getWorkingLanguage(), $url, $id)
+                [ Language::getWorkingLanguage(), $url, $id ]
             );
         }
 

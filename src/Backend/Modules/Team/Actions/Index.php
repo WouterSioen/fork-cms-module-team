@@ -39,15 +39,15 @@ class Index extends ActionIndex
         );
 
         $this->dataGrid->setColumnFunction(
-            array('Rhumsaa\Uuid\Uuid', 'fromBytes'),
-            array('[id]'),
+            [ 'Rhumsaa\Uuid\Uuid', 'fromBytes' ],
+            [ '[id]' ],
             'id',
             true
         );
 
         $this->dataGrid->setColumnFunction(
-            array(new DataGridFunctions(), 'getLongDate'),
-            array('[created_on]'),
+            [ new DataGridFunctions(), 'getLongDate' ],
+            [ '[created_on]' ],
             'created_on',
             true
         );
@@ -63,8 +63,8 @@ class Index extends ActionIndex
                 Language::lbl('Edit')
             );
             $this->dataGrid->setColumnFunction(
-                array(__CLASS__, 'addIdToEditUrl'),
-                array('[edit]', '[id]'),
+                [ __CLASS__, 'addIdToEditUrl' ],
+                [ '[edit]', '[id]' ],
                 'edit',
                 true
             );
