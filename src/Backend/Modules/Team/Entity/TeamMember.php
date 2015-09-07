@@ -9,7 +9,7 @@ use Rhumsaa\Uuid\Uuid;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class TeamMember
+final class TeamMember
 {
     private $id;
     private $metaId;

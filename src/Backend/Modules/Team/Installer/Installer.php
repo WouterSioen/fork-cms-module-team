@@ -9,7 +9,7 @@ use Backend\Core\Installer\ModuleInstaller;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class Installer extends ModuleInstaller
+final class Installer extends ModuleInstaller
 {
     /**
      * Install the module
