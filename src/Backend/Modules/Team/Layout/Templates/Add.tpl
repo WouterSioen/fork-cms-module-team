@@ -6,8 +6,8 @@
 </div>
 
 {form:add}
-<label for="title">{$lblTitle|ucfirst}</label>
-{$txtTitle} {$txtTitleError}
+<label for="name">{$lblName|ucfirst}</label>
+{$txtName} {$txtNameError}
 
 <div id="pageUrl">
   <div class="oneLiner">

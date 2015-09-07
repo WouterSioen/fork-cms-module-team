@@ -26,11 +26,18 @@ class TeamType
     private $meta;
 
     /**
-     * @param string $name
+     * @var null|TeamMember
      */
-    public function __construct($name)
+    private $teamMember = null;
+
+    /**
+     * @param string $name
+     * @param array $teamMember
+     */
+    public function __construct($name, $teamMember = null)
     {
         $this->form = new Form($name);
+        $this->teamMember = $teamMember;
 
         $this->build();
     }
@@ -47,10 +54,23 @@ class TeamType
         }
 
         $fields = $this->form->getFields();
+
+        // we already have a teammember? Let's update
+        if ($this->teamMember instanceof TeamMember) {
+            $this->teamMember->change(
+                $this->meta->save(),
+                $fields['name']->getValue(),
+                $fields['description']->getValue()
+            );
+
+            return true;
+        }
+
+        // time to create a new entity
         $this->teamMember = TeamMember::create(
             $this->meta->save(),
             Language::getWorkingLanguage(),
-            $fields['title']->getValue(),
+            $fields['name']->getValue(),
             $fields['description']->getValue()
         );
 
@@ -83,8 +103,8 @@ class TeamType
     private function build()
     {
         $this->form->addText(
-            'title',
-            null,
+            'name',
+            $this->teamMember === null ? null : $this->teamMember->getName(),
             null,
             'inputText title',
             'inputTextError title'
@@ -92,13 +112,13 @@ class TeamType
 
         $this->form->addEditor(
             'description',
-            null
+            $this->teamMember === null ? null : $this->teamMember->getDescription()
         );
 
         $this->meta = new Meta(
             $this->form,
-            null,
-            'title',
+            $this->teamMember === null ? null : $this->teamMember->getMetaId(),
+            'name',
             true
         );
     }
@@ -112,7 +132,7 @@ class TeamType
     {
         $fields = $this->form->getFields();
 
-        $fields['title']->isFilled(Language::err('FieldIsRequired'));
+        $fields['name']->isFilled(Language::err('FieldIsRequired'));
         $fields['description']->isFilled(Language::err('FieldIsRequired'));
 
         $this->meta->validate();
