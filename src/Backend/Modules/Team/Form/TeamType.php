@@ -34,7 +34,7 @@ class TeamType
      * @param string $name
      * @param array $teamMember
      */
-    public function __construct($name, $teamMember = null)
+    public function __construct($name, TeamMember $teamMember = null)
     {
         $this->form = new Form($name);
         $this->teamMember = $teamMember;
