@@ -88,4 +88,22 @@ class TeamMemberRepository
 
         return TeamMember::fromArray($teamMember);
     }
+
+    /**
+     * @param TeamMember $teamMember
+     */
+    public function delete(TeamMember $teamMember)
+    {
+        $this->database->delete(
+            'meta',
+            'id = ?',
+            [ $teamMember->getMetaId() ]
+        );
+
+        $this->database->delete(
+            'team_members',
+            'id = ?',
+            [ $teamMember->getId()->getBytes() ]
+        );
+    }
 }
