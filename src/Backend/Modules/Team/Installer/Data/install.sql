@@ -4,8 +4,8 @@ CREATE TABLE IF NOT EXISTS `team_members` (
   `language`    varchar(5)    NOT NULL,
   `name`        varchar(255)  NOT NULL,
   `description` text          NOT NULL,
-  `editedOn`    datetime      NOT NULL,
-  `createdOn`   datetime      NOT NULL,
+  `edited_on`    datetime      NOT NULL,
+  `created_on`   datetime      NOT NULL,
   `is_hidden`      tinyint(1)    NOT NULL DEFAULT 0 COMMENT 'lets not use ENUMs for this',
   PRIMARY KEY  (`id`),
   KEY `hidden` (`hidden`)

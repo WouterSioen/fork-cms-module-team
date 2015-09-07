@@ -1,1 +1,5 @@
-# services:
+services:
+  team_repository:
+    class: Backend\Modules\Team\Repository\TeamMemberRepository
+    arguments:
+      - @database
