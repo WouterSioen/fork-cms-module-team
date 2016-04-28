@@ -11,7 +11,7 @@ use Backend\Core\Engine\Model as BackendModel;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class Model
+final class Model
 {
     /**
      * Retrieve the unique URL for an teamMember

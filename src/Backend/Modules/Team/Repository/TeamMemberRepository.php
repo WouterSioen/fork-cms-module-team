@@ -7,7 +7,7 @@ use Rhumsaa\Uuid\Uuid;
 use Backend\Core\Engine\Model;
 use Backend\Modules\Team\Entity\TeamMember;
 
-class TeamMemberRepository
+final class TeamMemberRepository
 {
     /**
      * @var SpoonDatabase

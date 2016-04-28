@@ -13,7 +13,7 @@ use Backend\Modules\Team\Entity\TeamMember;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class TeamType
+final class TeamType
 {
     /**
      * @var Form

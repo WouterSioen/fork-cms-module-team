@@ -11,7 +11,7 @@ use Backend\Core\Engine\Base\ActionDelete;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class Delete extends ActionDelete
+final class Delete extends ActionDelete
 {
     public function execute()
     {

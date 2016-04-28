@@ -12,7 +12,7 @@ use Backend\Modules\Team\Form\TeamType;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class Edit extends ActionEdit
+final class Edit extends ActionEdit
 {
     public function execute()
     {

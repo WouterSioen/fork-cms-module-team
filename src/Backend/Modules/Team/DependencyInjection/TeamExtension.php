@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class TeamExtension extends Extension
+final class TeamExtension extends Extension
 {
     /**
      * {@inheritDoc}

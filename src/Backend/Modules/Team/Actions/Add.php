@@ -11,7 +11,7 @@ use Backend\Modules\Team\Form\TeamType;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class Add extends ActionAdd
+final class Add extends ActionAdd
 {
     public function execute()
     {

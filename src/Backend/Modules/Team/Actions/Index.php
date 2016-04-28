@@ -14,7 +14,7 @@ use Backend\Core\Engine\Model;
  *
  * @author Wouter Sioen <wouter@woutersioen.be>
  */
-class Index extends ActionIndex
+final class Index extends ActionIndex
 {
     /**
      * Execute the action
